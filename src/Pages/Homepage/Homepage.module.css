@@ -1,0 +1,191 @@
+.Homepage {
+    color: var(--primarycolor);
+    width: 100%;
+}
+
+.HeroSection {
+    height: 100vh;
+    width: 100%;
+    padding: 2% 0;
+    background-size: cover;
+    background: url("../../asset/firstBackground.png"), white;
+    background-blend-mode: darken;
+    text-align: center;
+    background-position-x: center;
+}
+
+.HeroSectionPannel {
+    background: rgba(255, 255, 255, 0.579);
+    border-radius: 10px;
+}
+
+.RequestDemo {
+    background-color: var(--primarycolor);
+    color: white;
+}
+
+.HerosectionHeading {
+    line-height: 30px;
+}
+
+.UpwardArrow {
+    filter: hue-rotate(231deg);
+    object-fit: contain;
+    width: 50%;
+}
+
+.UptoRight {
+    padding: 0 5%;
+    height: 100vh;
+}
+
+.UptoRightHeading {
+    margin: 170px 0 0 0;
+}
+
+
+.OurSolutions {
+    height: 50vh;
+    margin: 0 0 10vh 0;
+    width: 100%;
+    background: url(../../asset/Handshake.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    gap: 230px;
+    text-align: center;
+}
+
+.LearnMore{
+    color: white;
+    border: solid 1px white;
+}
+
+.LearnMore:hover{
+    background-color: white;
+    color: var(--primarycolor);
+}
+
+.RequestaDemo {
+    background-color: white;
+    color: var(--primarycolor);
+}
+
+.RequestaDemo:hover {
+    background-color: var(--primarycolor);
+    color: white;
+    border: solid 1px white;
+}
+
+.Service {
+    background-color: var(--primarycolor);
+}
+
+.ServiceAccordian p,
+.ServiceAccordian svg {
+    color: white;
+}
+
+.ImageHolder {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    height: 500px;
+}
+
+.ProductList li {
+    /* transition: all 0.5s ease-in; */
+    border-radius: 10px 10px 0 0;
+    padding: 4px 18px;
+    cursor: pointer;
+}
+
+.ProductList [data-item-active=true] {
+    background-color: var(--primarycolor);
+    color: white;
+    position: relative;
+}
+
+.ProductList [data-item-active=true]::view-transition{
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+.ProductList [data-item-active=true]::after {
+    content: "";
+    transition: all 0.5s ease-in;
+    height: 20px;
+    aspect-ratio: 1;
+    background-color: transparent;
+    left: -20px;
+    bottom: 0;
+    border-radius: 50%;
+    box-shadow: 10px 10px 0px var(--primarycolor);
+    position: absolute;
+    z-index: 1;
+}
+
+.ProductList [data-item-active=true]::before {
+    content: "";
+    height: 20px;
+    aspect-ratio: 1;
+    background-color: transparent;
+    right: -20px;
+    bottom: 0;
+    border-radius: 50%;
+    box-shadow: -10px 10px 0px var(--primarycolor);
+    position: absolute;
+    z-index: 1;
+    transition: all 0.5s ease-in;
+}
+
+.IntegrationHand{
+    filter: drop-shadow(0px 0px 10px var(--primarycolor));
+}
+
+.Integrations{
+    text-align: center;
+    padding: 10vh 0;
+}
+
+.IntegrationsLists{
+    display: grid;
+    grid-template-columns: repeat(2,400px);
+    gap: 2rem;
+}
+
+.IntegrationElement{
+    color: var(--primarycolor);
+    border: solid 1px var(--primarycolor);
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.IntegrationElement img{
+    width: 40px;
+    aspect-ratio: 1;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .Homepage {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .Homepage {
+        width: 96%;
+    }
+}
