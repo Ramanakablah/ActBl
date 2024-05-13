@@ -1,6 +1,7 @@
 .Homepage {
     color: var(--primarycolor);
     width: 100%;
+    background-color: #c6cbd494;
 }
 
 .HeroSection {
@@ -22,6 +23,12 @@
 .RequestDemo {
     background-color: var(--primarycolor);
     color: white;
+    border: solid 1px var(--primarycolor);
+}
+
+.RequestDemo:hover {
+    background-color: transparent;
+    color: var(--primarycolor);
 }
 
 .HerosectionHeading {
@@ -78,6 +85,7 @@
 
 .Service {
     background-color: var(--primarycolor);
+    padding: 3rem 5%;
 }
 
 .ServiceAccordian p,
@@ -92,10 +100,15 @@
     height: 500px;
 }
 
+.ProductList{
+    padding: 0 5%;
+}
+
 .ProductList li {
     /* transition: all 0.5s ease-in; */
     border-radius: 10px 10px 0 0;
     padding: 4px 18px;
+    font-size: 18px;
     cursor: pointer;
 }
 
@@ -161,11 +174,16 @@
     cursor: pointer;
     border-radius: 10px;
     padding: 10px 20px;
+    background-color: white;
 }
 
 .IntegrationElement img{
-    width: 40px;
+    width: 50px;
     aspect-ratio: 1;
+}
+
+.UpRightImage{
+    filter: hue-rotate(231deg);
 }
 
 @keyframes fadeIn {

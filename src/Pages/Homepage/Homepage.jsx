@@ -6,9 +6,10 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import { IoIosArrowDown } from "react-icons/io";
 import integration from "../../asset/puzzle.png"
 import { Integrations } from './Integrations';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 const Homepage = () => {
-
     const [index, setindex] = useState(0)
     const [expanded, setexpand] = useState('panel0')
     const ChangeIndexes = (index) => {
@@ -23,10 +24,21 @@ const Homepage = () => {
         setexpand(panel + index)
     }
 
+    useGSAP(() => {
+        gsap.from('.HeroSectionPannel', {
+            opacity: 0,
+            y: 250,
+            scale: 0.5,
+            duration: 1
+        })
+    })
+
+
+
     return (
         <div className={`${style.Homepage}`}>
             <section className={`${style.HeroSection} flex items-start justify-center`}>
-                <div className={`flex items-center justify-center flex-col gap-3 w-6/12 ${style.HeroSectionPannel}`}>
+                <div className={`flex items-center justify-center flex-col gap-3 w-6/12 ${style.HeroSectionPannel} HeroSectionPannel`}>
                     <p className={`Heading Bold leading-12`}>
                         Drive Business <span className={` Literata `}></span> up and to the right
                     </p>
@@ -59,7 +71,7 @@ const Homepage = () => {
                 </p>
             </section>
             <section className={style.Products}>
-                <div className={`mx-20 ${style.ProductList}`}>
+                <div className={`${style.ProductList}`}>
                     <ul className={`flex `}>
                         <li onClick={() => { ChangeIndexes(0) }} data-item-active={index === 0}>ProfitSword</li>
                         <li onClick={() => { ChangeIndexes(1) }} data-item-active={index === 1}>Hotel Effectiveness</li>
@@ -68,7 +80,7 @@ const Homepage = () => {
                     </ul>
                 </div>
                 <div>
-                    {index === 0 && <div className={`${style.Service} flex gap-6 p-12`}>
+                    {index === 0 && <div className={`${style.Service} flex gap-6`}>
                         <div className={`flex-1 w-1/2 ${style.ImageHolder}`}>
                             <img src="https://actabl.com/wp-content/uploads/homepage-profitsword-solutions-e1682520539525.png" alt="" />
                         </div>
@@ -115,7 +127,7 @@ const Homepage = () => {
                             </div>
                         </div>
                     </div>}
-                    {index === 1 && <div className={`${style.Service} flex gap-6 p-12`}>
+                    {index === 1 && <div className={`${style.Service} flex gap-6`}>
                         <div className={`flex-1 w-1/2 ${style.ImageHolder}`}>
                             <img src="https://actabl.com/wp-content/uploads/homepage-hotel-effectiveness-solutions-e1682520579227.png" alt="" />
                         </div>
@@ -160,7 +172,7 @@ const Homepage = () => {
                             </div>
                         </div>
                     </div>}
-                    {index === 2 && <div className={`${style.Service} flex gap-6 p-12`}>
+                    {index === 2 && <div className={`${style.Service} flex gap-6`}>
                         <div className={`flex-1 w-1/2 ${style.ImageHolder}`}>
                             <img src="https://actabl.com/wp-content/uploads/homepage-alice-solutions-e1682520605527.png" alt="" />
                         </div>
@@ -207,7 +219,7 @@ const Homepage = () => {
                             </div>
                         </div>
                     </div>}
-                    {index === 3 && <div className={`${style.Service} flex gap-6 p-12`}>
+                    {index === 3 && <div className={`${style.Service} flex gap-6`}>
                         <div className={`flex-1 w-1/2 ${style.ImageHolder}`}>
                             <img src="https://actabl.com/wp-content/uploads/homepage-transcendent-solutions-e1682520511446.png" alt="" />
                         </div>
@@ -261,7 +273,7 @@ const Homepage = () => {
                     <img src={integration} alt="" className={style.IntegrationHand} />
                 </div>
                 <div className={`IntegrationList`}>
-                    <div className="SemiHeading Bold my-4">
+                    <div className="Heading my-4">
                         Integrations
                     </div>
                     <div className="SimpleText">
@@ -285,6 +297,23 @@ const Homepage = () => {
                             )
                         })
                     }
+                </div>
+                <button className={`Buttons ${style.RequestDemo}`}>
+                    Explore Integrations
+                </button>
+            </section>
+            <section className={`flex items-start justify-between gap-4 p-12`}>
+                <img src="https://actabl.com/wp-content/uploads/footer-homepage.png" alt="" className={`flex-1 w-1/2 ${style.UpRightImage}`} />
+                <div className={`flex-1 w-1/2 flex flex-col items-start justify-center gap-4`}>
+                    <p className="Heading Bold">
+                        Ready to move up and to the right?
+                    </p>
+                    <div className="SemiHeading">
+                        Grab the wheel and drive profits with Actabl.
+                    </div>
+                    <button className={`Buttons ${style.RequestDemo}`}>
+                        Request a Demo
+                    </button>
                 </div>
             </section>
         </div>

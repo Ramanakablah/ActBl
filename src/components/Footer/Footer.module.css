@@ -1,0 +1,34 @@
+.Footer{
+    background-color: var(--primarycolor);
+    color: white;
+    padding: 4rem 5%;
+}
+
+.FooterbrandImage{
+    width: 150px;
+    margin: 0px 0 40px 0;
+}
+
+.Footerelement li{
+    cursor: pointer;
+}
+
+.SocialMediaList{
+    font-size: 22px;
+}
+
+.Footerelement{
+    width: 24%;
+    font-size: 16px;
+}
+
+.FooterArticleelement{
+    width: 28%;
+    min-width: 280px;
+    box-sizing: border-box;
+    margin:0 100px 0 0 ;
+    text-align: left;
+    font-size: 16px;
+    line-height: 24px;
+}
+
